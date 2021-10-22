@@ -1,2 +1,3 @@
 send
-.DS_Status
+.DS_Store
+__pycache__
