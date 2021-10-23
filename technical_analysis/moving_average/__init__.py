@@ -1,0 +1,1 @@
+from technical_analysis.moving_average.simple_moving_avarage import sma

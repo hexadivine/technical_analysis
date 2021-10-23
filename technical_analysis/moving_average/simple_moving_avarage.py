@@ -2,7 +2,7 @@ from technical_analysis._utils.convert_datatype import convert_numpy, convert_to
 import numpy as np
 from math import nan
 
-def sma(data, limit):
+def SMA(data, limit):
     if (limit == 1):
         return data
     if (limit > len(data)):
