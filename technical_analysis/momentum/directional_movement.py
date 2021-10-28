@@ -1,7 +1,7 @@
 from technical_analysis._utils.convert_datatype import convert_numpy, convert_to_numpy
 import numpy as np
 
-def DM(high, low):
+def FIND_DM(high, low, dm_type='PLUS'):
     # validate data
     high, original_datatype = convert_to_numpy(high)
     low, _ = convert_to_numpy(low)
@@ -20,26 +20,31 @@ def DM(high, low):
     down_move[0] = np.nan
     down_move[1:] = low[:-1]-low[1:]
 
-    # finding positive dm (if UpMove > DownMove and UpMove > 0, then +DM = UpMove, else +DM = 0)
-    pos_dm = np.zeros_like(high, dtype='float')
-    pos_dm[0] = np.nan
+    # finding dm 
+    find_dm = np.zeros_like(high, dtype='float')
+    find_dm[0] = np.nan
 
-    pos_dm_len = len(pos_dm)
-    for index in range(1,pos_dm_len):
-        if (up_move[index] > down_move[index] and up_move[index] > 0):
-            pos_dm[index] = up_move[index]
-        else:
-            pos_dm[index] = 0
+    find_dm_len = len(find_dm)
+    for index in range(1, find_dm_len):
+        # +dm = (if UpMove > DownMove and UpMove > 0, then +DM = UpMove, else +DM = 0)
+        if (dm_type.lower() == 'plus'):
+            if (up_move[index] > down_move[index] and up_move[index] > 0):
+                find_dm[index] = up_move[index]
+            else:
+                find_dm[index] = 0
+        # -dm = (if DownMove > UpMove and DownMove > 0, then -DM = DownMove, else -DM = 0)
+        elif (dm_type.lower() == 'minus'):
+            if (up_move[index] < down_move[index] and down_move[index] > 0):
+                find_dm[index] = down_move[index]
+            else:
+                find_dm[index] = 0
 
-    # finding negative dm (if DownMove > UpMove and DownMove > 0, then -DM = DownMove, else -DM = 0)
-    neg_dm = np.zeros_like(high, dtype='float')
-    neg_dm[0] = np.nan
 
-    neg_dm_len = len(neg_dm)
-    for index in range(1, neg_dm_len):
-        if (up_move[index] < down_move[index] and down_move[index] > 0):
-            neg_dm[index] = down_move[index]
-        else:
-            neg_dm[index] = 0
-    
-    return convert_numpy(pos_dm, to=original_datatype), convert_numpy(neg_dm, to=original_datatype)
+  
+    return convert_numpy(find_dm_len, to=original_datatype)
+
+def PLUS_DM(high, low):
+    return FIND_DM(high, low, 'PLUS')
+
+def MINUS_DM(high, low):
+    return FIND_DM(high, low, 'MINUS')
