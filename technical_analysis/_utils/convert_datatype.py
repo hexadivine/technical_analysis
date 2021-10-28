@@ -3,7 +3,7 @@ import pandas as pd
 
 def convert_to_numpy(data):
     if (str(type(data)) != "<class 'numpy.ndarray'>"):
-        return np.array(data), str(type(data))
+        return np.array(data, dtype='float'), str(type(data))
 
     return data, str(type(data))
 
