@@ -38,10 +38,8 @@ def FIND_DM(high, low, dm_type='PLUS'):
                 find_dm[index] = down_move[index]
             else:
                 find_dm[index] = 0
-
-
   
-    return convert_numpy(find_dm_len, to=original_datatype)
+    return convert_numpy(find_dm, to=original_datatype)
 
 def PLUS_DM(high, low):
     return FIND_DM(high, low, 'PLUS')
