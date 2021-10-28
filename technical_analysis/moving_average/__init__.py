@@ -1,1 +1,3 @@
-from technical_analysis.moving_average.simple_moving_avarage import sma
+from .simple_moving_avarage import SMA
+from .smoothed_moving_average import SMMA
+from .exponential_moving_average import EMA
