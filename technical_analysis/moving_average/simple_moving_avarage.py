@@ -8,7 +8,15 @@ def SMA(data, limit):
     if (limit > len(data)):
         return convert_numpy(np.full(len(data), nan), str(type(data))) 
 
-    data, type_of_data = convert_to_numpy(data)
+    data, original_datatype = convert_to_numpy(data)
+
+    count_nan = 0
+    while (np.isnan(data[count_nan])):
+        count_nan+=1
+
+    if (count_nan > 0):
+        data[count_nan:] = SMA(data[count_nan:], limit)
+        return data
 
     continues_sum = np.cumsum(data, dtype='float')
     continues_sum[limit:] = continues_sum[limit:] - continues_sum[:-limit]
@@ -16,6 +24,4 @@ def SMA(data, limit):
     
     moving_avarage = np.concatenate([(limit-1)*[nan], moving_avarage])
 
-    return convert_numpy(moving_avarage, to=type_of_data)
-
-    
+    return convert_numpy(moving_avarage, to=original_datatype)
