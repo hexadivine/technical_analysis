@@ -1,3 +1,4 @@
+from technical_analysis import moving_average
 from technical_analysis._utils.convert_datatype import convert_to_numpy, convert_numpy
 import technical_analysis as ta
 
@@ -14,7 +15,7 @@ def ADX(high, low, close, limit, moving_average_func=ta.EMA, alpha=1.071421):
     # calculate dx
     dx = abs(plus_di - minus_di)/abs(plus_di + minus_di)
 
-    # get average directional movement index using ema on dx
-    adx = 100*moving_average_func(dx, limit, alpha)
+    # get average directional movement index using 
+    adx = 100*ta.MA(dx, limit, moving_average_func, {'alpha':alpha})
 
     return convert_numpy(adx, original_datatype)
