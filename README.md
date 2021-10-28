@@ -1,6 +1,6 @@
 # Technical Analysis
 
-A pure python library to perform technical analysis in a very efficient way without installing any dependencies.
+A pure python library to perform technical analysis in a very efficient way without installing any dependencies other than numpy.
 
 
 ## Why to use this library
