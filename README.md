@@ -5,14 +5,15 @@ A pure python library to perform technical analysis in a very efficient way with
 
 ## Why to use this library
 - Does not require any other dependencies or packages to be installed on the system to perform technical analysis like ta-lib.
-- Library's structure and code is easy to understand as compared to ta-lib or any other library.
+- Easy to install and it is a cross platform library.
 - Works flawlessly with below parameter as a datatype
   - Numpy Arrays
   - Pandas Dataframes
   - Python Lists
 - This library uses numpy library to perform arithmetic operations 
+- Library's structure and code is easy to understand as compared to ta-lib or any other library.
 - This library will support 139+ indicators (currently supports 5)
-- Easy to install and it is a cross platform library.
+
 
 
 ## Installation
