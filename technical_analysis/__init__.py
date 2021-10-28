@@ -1,5 +1,5 @@
-# momentum indecators
-from technical_analysis.moving_average.simple_moving_avarage import sma
-
-# Oscillator
-from technical_analysis.oscillators.rsa import rsa
+from technical_analysis.moving_average import *
+from technical_analysis.momentum import *
+from technical_analysis.trend import *
+from technical_analysis.volatility import *
+from technical_analysis.other import *
