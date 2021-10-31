@@ -1,1 +1,1 @@
-from .directional_movement import PLUS_DM, MINUS_DM, FIND_DM
+from ._directional_movement import PLUS_DM, MINUS_DM, FIND_DM
