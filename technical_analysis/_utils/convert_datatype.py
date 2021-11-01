@@ -3,9 +3,10 @@ import pandas as pd
 
 def convert_to_numpy(data):
     if (str(type(data)) != "<class 'numpy.ndarray'>"):
-        return np.array(data, dtype='float'), str(type(data))
+        data = np.array(data, dtype='float')
+        return data, str(type(data))
 
-    return data, str(type(data))
+    return data.astype('float64'), str(type(data))
 
 def convert_numpy(data, to):
     if (to == "<class 'pandas.core.series.Series'>"):

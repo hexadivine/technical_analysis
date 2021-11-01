@@ -1,6 +1,7 @@
 from technical_analysis._utils.convert_datatype import convert_to_numpy, convert_numpy
 import technical_analysis as ta
 import numpy as np
+
 def ADX(high, low, close, limit, moving_average_func=ta.EMA, alpha=1.071421):
     # validate data
     high, original_datatype = convert_to_numpy(high)

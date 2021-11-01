@@ -7,7 +7,7 @@ def EMA(data, limit, alpha=2):
     # validate data
     data, original_datatype = convert_to_numpy(data)
     if (limit > len(data)):
-        return convert_numpy(np.full(len(data), nan), str(type(data))) 
+        return convert_numpy(np.full(len(data), np.nan), str(type(data))) 
 
     # count nan values in data
     total_nan=0
