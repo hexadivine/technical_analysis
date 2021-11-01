@@ -16,6 +16,6 @@ def ADX(high, low, close, limit, moving_average_func=ta.EMA, alpha=1.071421):
     dx = abs(plus_di - minus_di)/abs(plus_di + minus_di)
 
     # get average directional movement index using 
-    adx = np.round(100*ta.MA(dx, limit, moving_average_func, {'alpha':alpha}), 2)
+    adx = 100*ta.MA(dx, limit, moving_average_func, {'alpha':alpha})
 
     return convert_numpy(adx, original_datatype)
