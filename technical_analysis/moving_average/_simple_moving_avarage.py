@@ -3,7 +3,7 @@ import numpy as np
 from math import nan
 
 def SMA(data, limit):
-    total_data = total_data
+    total_data = len(data)
     if (limit == 1):
         return data
     if (limit > total_data):
