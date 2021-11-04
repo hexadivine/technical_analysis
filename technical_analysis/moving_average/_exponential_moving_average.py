@@ -4,14 +4,15 @@ import technical_analysis as ta
 
 
 def EMA(data, limit, alpha=2):
+    total_data = len(data)
     # validate data
     data, original_datatype = convert_to_numpy(data)
     if (limit > len(data)):
-        return convert_numpy(np.full(len(data), np.nan), str(type(data))) 
+        return convert_numpy(np.full(total_data, np.nan), str(type(data))) 
 
     # count nan values in data
     total_nan=0
-    while (np.isnan(data[total_nan])):
+    while (total_nan < total_data and np.isnan(data[total_nan])):
         total_nan+=1
     
     # ignore nan values if exists and find ema

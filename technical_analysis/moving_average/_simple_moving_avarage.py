@@ -3,15 +3,16 @@ import numpy as np
 from math import nan
 
 def SMA(data, limit):
+    total_data = len(data)
     if (limit == 1):
         return data
     if (limit > len(data)):
-        return convert_numpy(np.full(len(data), nan), str(type(data))) 
+        return convert_numpy(total_data, nan), str(type(data))) 
 
     data, original_datatype = convert_to_numpy(data)
 
     count_nan = 0
-    while (np.isnan(data[count_nan])):
+    while (count_nan < total_data and np.isnan(data[count_nan])):
         count_nan+=1
 
     if (count_nan > 0):

@@ -4,13 +4,12 @@ import numpy as np
 
 def SMMA(data, limit):
     data, original_datatype = convert_to_numpy(data)
-
     data_len = len(data)
     if (limit > data_len or limit <= 0):
         raise ValueError("Invalid Limit Set")
 
     start=0
-    while (np.isnan(data[start])):
+    while (start < data_len and np.isnan(data[start])):
         start+=1
 
     sum=0
