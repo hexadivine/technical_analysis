@@ -3,11 +3,11 @@ import numpy as np
 from math import nan
 
 def SMA(data, limit):
-    total_data = len(data)
+    total_data = total_data
     if (limit == 1):
         return data
-    if (limit > len(data)):
-        return convert_numpy(total_data, nan), str(type(data))) 
+    if (limit > total_data):
+        return convert_numpy(total_data, str(type(data))
 
     data, original_datatype = convert_to_numpy(data)
 
