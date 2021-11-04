@@ -7,7 +7,7 @@ def SMA(data, limit):
     if (limit == 1):
         return data
     if (limit > total_data):
-        return convert_numpy(total_data, str(type(data))
+        return convert_numpy(total_data, str(type(data)))
 
     data, original_datatype = convert_to_numpy(data)
 
