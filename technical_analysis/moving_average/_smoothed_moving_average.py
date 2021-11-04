@@ -5,8 +5,8 @@ import numpy as np
 def SMMA(data, limit):
     data, original_datatype = convert_to_numpy(data)
     data_len = len(data)
-    if (limit > data_len or limit <= 0):
-        raise ValueError("Invalid Limit Set")
+    if (limit > data_len):
+        return convert_numpy(np.full(data_len, np.nan), str(type(data))) 
 
     start=0
     while (start < data_len and np.isnan(data[start])):
