@@ -1,7 +1,7 @@
 from technical_analysis._utils.convert_datatype import convert_numpy, convert_to_numpy
 import technical_analysis as ta
 
-def DMI(high, low, close, limit, moving_average_func=ta.EMA, alpha=1.071421):
+def DMI(high, low, close, limit, moving_average_func=ta.EMA, alpha=2):
     # validate data
     high, original_datatype = convert_to_numpy(high)
     low, _ = convert_to_numpy(low)

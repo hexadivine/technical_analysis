@@ -1,7 +1,7 @@
 import technical_analysis as ta
 from technical_analysis._utils.convert_datatype import convert_numpy, convert_to_numpy
 
-def FIND_DI(high, low, close, limit, direction_type='PLUS', moving_average_func=ta.EMA, alpha=1.071421):
+def FIND_DI(high, low, close, limit, direction_type='PLUS', moving_average_func=ta.EMA, alpha=2):
     # validate data
     high, original_datatype = convert_to_numpy(high)
     low, _ = convert_to_numpy(low)
@@ -17,8 +17,8 @@ def FIND_DI(high, low, close, limit, direction_type='PLUS', moving_average_func=
 
     return convert_numpy(find_di, original_datatype)
 
-def PLUS_DI(high, low, close, limit, moving_average_func=ta.EMA, alpha=1.071421):
+def PLUS_DI(high, low, close, limit, moving_average_func=ta.EMA, alpha=2):
     return FIND_DI(high, low, close, limit, 'PLUS', moving_average_func, alpha)
 
-def MINUS_DI(high, low, close, limit, moving_average_func=ta.EMA, alpha=1.071421):
+def MINUS_DI(high, low, close, limit, moving_average_func=ta.EMA, alpha=2):
     return FIND_DI(high, low, close, limit, 'MINUS', moving_average_func, alpha)
