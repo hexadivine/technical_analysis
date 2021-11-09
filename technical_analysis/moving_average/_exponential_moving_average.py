@@ -3,7 +3,10 @@ from technical_analysis._utils.convert_datatype import convert_to_numpy, convert
 import technical_analysis as ta
 
 
-def EMA(data, limit, alpha=2):
+def EMA(data, limit, alpha=-1):
+    if(alpha == -1):
+        alpha = 2/(limit+1)
+
     total_data = len(data)
     # validate data
     data, original_datatype = convert_to_numpy(data)
@@ -21,7 +24,7 @@ def EMA(data, limit, alpha=2):
         return data
 
     # weigh formula
-    weight = alpha/(limit+1)
+    # weight = alpha/(limit+1)
 
     # find first ema (ema(1)=sma(data, limit))
     ema = np.zeros_like(data)
@@ -30,6 +33,6 @@ def EMA(data, limit, alpha=2):
     # find 2nd ema to nth (n=length of data) [ema(today) = (data(today) - ema(yesterday))*weight + ema(yesterday)]
     data_len = len(data)
     for i in range(limit, data_len):
-        ema[i] = (data[i] - ema[i-1])*weight + ema[i-1]
+        ema[i] = (data[i] - ema[i-1])*alpha + ema[i-1]
 
     return convert_numpy(ema, original_datatype)
