@@ -16,6 +16,6 @@ def ADX(high, low, close, limit):
     dx = abs(plus_di - minus_di)/abs(plus_di + minus_di)
 
     # get average directional movement index using 
-    adx = 100*ta.SMMA(dx, limit)
+    adx = 100*ta.RMA(dx, limit)
 
     return convert_numpy(adx, original_datatype)

@@ -10,7 +10,7 @@ def FIND_DI(high, low, close, limit, direction_type='PLUS'):
     # find directional movement
     find_dm = ta.FIND_DM(high, low, direction_type)
     
-    smoothed_find_dm = ta.SMMA(find_dm, limit)
+    smoothed_find_dm = ta.RMA(find_dm, limit)
     average_true_range = ta.ATR(high, low, close, limit)
 
     find_di = 100 * smoothed_find_dm/average_true_range
