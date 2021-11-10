@@ -7,6 +7,8 @@ def ADX(high, low, close, limit):
     high, original_datatype = convert_to_numpy(high)
     low, _ = convert_to_numpy(low)
     close, _ = convert_to_numpy(close)
+    
+    np.seterr(divide='ignore', invalid='ignore')
 
     # find di
     plus_di = ta.PLUS_DI(high, low, close, limit)
