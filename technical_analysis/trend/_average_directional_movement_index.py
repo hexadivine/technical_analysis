@@ -2,7 +2,7 @@ from technical_analysis._utils.convert_datatype import convert_to_numpy, convert
 import technical_analysis as ta
 import numpy as np
 
-def ADX(high, low, close, limit):
+def ADX(high, low, close, limit=14):
     # validate data
     high, original_datatype = convert_to_numpy(high)
     low, _ = convert_to_numpy(low)

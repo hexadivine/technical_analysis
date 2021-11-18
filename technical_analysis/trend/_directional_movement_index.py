@@ -1,7 +1,7 @@
 from technical_analysis._utils.convert_datatype import convert_numpy, convert_to_numpy
 import technical_analysis as ta
 
-def DMI(high, low, close, limit):
+def DMI(high, low, close, limit=14):
     # validate data
     high, original_datatype = convert_to_numpy(high)
     low, _ = convert_to_numpy(low)
