@@ -3,6 +3,12 @@
 A pure python library to perform technical analysis in a very efficient way without installing any dependencies other than numpy.
 
 
+## Installation
+
+```
+pip install -U git+https://github.com/h3x4d1v1n3/technical_analysis
+```
+
 ## Why to use this library
 - Does not require any other dependencies or packages to be installed on the system to perform technical analysis like ta-lib.
 - Easy to install and it is a cross platform library.
@@ -14,13 +20,6 @@ A pure python library to perform technical analysis in a very efficient way with
 - Library's structure and code is easy to understand as compared to ta-lib or any other library.
 - This library will support 139+ indicators (currently supports 5)
 
-
-
-## Installation
-
-```
-pip install -U git+https://github.com/h3x4d1v1n3/technical_analysis
-```
   
 ## Supported Functions
 
