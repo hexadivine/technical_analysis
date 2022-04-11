@@ -23,15 +23,29 @@ pip install -U git+https://github.com/h3x4d1v1n3/technical_analysis
   
 ## Supported Functions
 
-| Sr. No. | Function Name |           Indicator name           |
-|:-------:|:-------------:|:----------------------------------:|
-|    1    |      ADX      | Average Directional Movement Index |
-|    2    |      ATR      |         Average True Range         |
-|    3    |      SMA      |        Simple Moving Average       |
-|  ***4***   |      ***SMMA***     |       ***Smoothed Moving Average***      |
-|    5    |       TRANGE      |             True Range             |
+- Momentum indicator (momentum)
+  - Directional Movement (PLUS_DM/MINUS_DM)
+  - Moving Average Convergence/Divergence (MACD)
+  - Relative Strength Index (RSI)
 
+- Moving Average Indicator (moving_average)
+  - Simple Moving Average (SMA)
+  - Exponential Moving Average (EMA)
+  - Rolling/Smooth Moving Average(RMA/SMMA - both functions are same)
+  - Moving Average Cross (MA_CROSS)
 
+- Trend Indicator (trend)
+  - Directional Index (PLUS_DI/MINUS_DI)
+  - Directional Movement Index (DMI)
+  - Average Directional Movement Index (ADX)
+
+- Volatility Indicator (trend)
+  - Average True Range (ATR)
+  - True Range (TRANGE)
+
+- Other
+  - Average Gain & Loss (AVG_GAIN, AVG_LOSS)
+  - Cross (CROSSOVER & CROSSUNDER)
 
 ## Functions To Add
 
@@ -172,4 +186,3 @@ pip install -U git+https://github.com/h3x4d1v1n3/technical_analysis
 |   133   |        WILLR        |                         Williams' %R                         |
 |   134   |         WMA         |                    Weighted Moving Average                   |
 
-> bold styling denotes functions that are not supported by ta-lib  
