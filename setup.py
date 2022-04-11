@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-long_description = 'A light-weight library which does not require any libraries to install and processes data from pandas, numpy or a normal python array with the help of threads.'
+long_description = 'A light-weight library which does not require any libraries to install and processes data from pandas, numpy or a normal python array.'
 
 setup(
     name='technical_analysis',
