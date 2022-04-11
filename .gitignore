@@ -3,3 +3,5 @@ send
 __pycache__
 .vscode
 test
+.venv
+*.egg-info
